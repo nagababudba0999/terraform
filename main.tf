@@ -10,14 +10,14 @@ terraform {
 
 
 module "ec2module"{
-  source = "./Modules/ec2"
+  source = "Modules/ec2"
 }
 
 module "albmodule"{
-  source = "./Modules/elb"
+  source = "Modules/elb"
   instance-id = module.ec2module.instance-id
 }
 
 module "rdsmodule"{
-  source = "./Modules/rds"
+  source = "Modules/rds"
 }
