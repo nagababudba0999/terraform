@@ -1,4 +1,3 @@
-
 variable "VPC_Id" {
   default = "vpc-eaf31297"
 }
