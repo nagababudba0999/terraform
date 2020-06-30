@@ -5,7 +5,7 @@ resource "aws_instance" "web" {
   key_name = var.Key_Name
   subnet_id = var.Private_Subnets[0]
   security_groups = [var.EC2_SG[0], var.EC2_SG[1]]
-  user_data = file("./user_data.sh")
+  //user_data = file("./user_data.sh")
 
   tags = {
     Name = "WordPress_Web"
