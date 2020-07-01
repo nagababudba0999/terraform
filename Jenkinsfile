@@ -9,17 +9,17 @@ String credentialsId = 'AwsCredentials'
     }
   }
 
-  // Run terraform init
-  stage('init') {
-    node {
+node {
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
         credentialsId: credentialsId,
         accessKeyVariable: 'AWS_ACCESS_KEY_ID',
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-      ]]) {
-         sh 'terraform init'
-      }
-    }
-  }
 
+stage('init') {
+       steps {
+           sh 'terraform init'
+       }
+     }
+        }
+        
